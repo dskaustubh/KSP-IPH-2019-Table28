@@ -15,6 +15,3 @@ cd into face_recognition & run python fr_final.py
 To use our Webapp:
 Install Xampp & start Both Apache & MYSQL Servee
 cd into web & run app.py
-
-Matched data coming soon
-
