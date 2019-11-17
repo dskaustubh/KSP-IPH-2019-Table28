@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/dashboard.css') }}" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel="stylesheet" />
+    <title>Missing Details</title>
+</head>
+
+<body>
+    <center>
+       
+        <div class="fix">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static',filename='images/download.png') }}" width="80" height="80"
+                        class="d-inline-block" alt="Logo">
+                    <span class="h2 display-5" style="margin-left: 1em;">Galacticos</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                
+                <div class="collapse navbar-collapse mr-sm-2" id="navbarNav" >
+                    <ul class="navbar-nav nav navbar-right">
+                        
+                        <li class="nav-item">
+                            <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary " style="margin: 5px 0 0 800px;"
+                                 >Missing Details</a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="{{ url_for('found') }}" class="btn btn-outline-primary " style="margin: 5px;"
+                                 >Found Details</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ url_for('logout') }}" class="btn btn-outline-danger " style="margin: 5px;"
+                                 >Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="header">
+            <div class="jumbotron">
+                <img src="{{ url_for('static',filename='images/download.png') }}" width="150" height="150"
+                    style="float: left;padding: 0; margin: 20px;">
+                <br>
+                <p class="h1 ml-3" style="margin-top: 25px;"><b>Welcome</b></p>
+                <p class="h2 ml-3"><b>Enter the details of the missing person</b></p>
+
+            </div>
+        </div>
+        
+        <div class="found">
+            <div class="jumbotron">
+
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label for="text">arr_id :</label>
+                        <input id="arr_id" type="number" name="arr_id" placeholder="arr_id">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Unit_id :</label>
+                        <input id="Unit_id" type="number" name="Unit_id" placeholder="Unit_id">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">District Name :</label>
+                        <input id="district_Name" name="district_Name" placeholder="district_Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Unit name :</label>
+                        <input id="Unit_name" name="Unit_name" placeholder="Unit_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">FIR No :</label>
+                        <input id="FIRNo" name="FIRNo" placeholder="FIRNo">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">FIR Date :</label>
+                        <input id="FIR_Date" name="FIR_Date" placeholder="FIR_Date">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Complaint Person Name :</label>
+                        <input id="Complainant_Name" name="Complainant_Name" placeholder="Complainant_Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Complaint Relation :</label>
+                        <input id="Complainant_Relation" name="Complainant_Relation" placeholder="Complainant_Relation">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Date Of Missing :</label>
+                        <input id="Date_Of_Missing" name="Date_Of_Missing" placeholder="Date_Of_Missing">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Person Name :</label>
+                        <input id="Person_Name" name="Person_Name" placeholder="Person_Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Permanent Address :</label>
+                        <input id="Perm_Address1" name="Perm_Address1" placeholder="Perm_Address1">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Sex :</label>
+                        <input id="Sex" name="Sex" placeholder="Sex">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Age :</label>
+                        <input id="Age" type="number" name="Age" placeholder="Age">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Height :</label>
+                        <input id="Height" type="number" name="Height" placeholder="Height">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Build :</label>
+                        <input id="Build" name="Build" placeholder="Build">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Complexion :</label>
+                        <input id="Complextion" name="Complextion" placeholder="Complextion">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Face :</label>
+                        <input id="Face" name="Face" placeholder="Face">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Colour :</label>
+                        <input id="Colour" name="Colour" placeholder="Colour">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Hair :</label>
+                        <input id="Hair" name="Hair" placeholder="Hair">
+                    </div>
+                    <div class="form-group">
+                        <label for="Language_sp">Language Spoken :</label>
+                        <input id="Language_sp" name="Language_sp" placeholder="Language_sp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Phisical_Pecularities">Physical Pecularities :</label>
+                        <input id="Phisical_Pecularities" name="Phisical_Pecularities" placeholder="Phisical_Pecularities">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Dress_Description">Dress Description :</label>
+                        <input id="Dress_Description" name="Dress_Description" placeholder="Dress_Description">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ID_Marks">ID Marks :</label>
+                        <input id="ID_Marks" name="ID_Marks" placeholder="ID_Marks">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Phone">Phone Number :</label>
+                        <input id="Phone" name="Phone" placeholder="Phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Email">Email :</label>
+                        <input id="Email" name="Email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="path">Upload an image :</label>
+                        <input id="path" name="path" type="file" class="btn" accept="image/*">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="crime_no">Crime No :</label>
+                        <input id="crime_no" type="number"a name="crime_no" placeholder="crime_no">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <h5>{{ message }}</h5>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </form>
+            </div>
+        </div>
+       
+        <a name="contactus"></a>
+        <div class="footer">
+            
+                <div class="h5 display-5">
+                    &copy Copyright @ Galacticos
+                    <span class="badge badge-warning">Copyright</span>
+                </div>
+           
+        </div>
+        
+    </center>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
